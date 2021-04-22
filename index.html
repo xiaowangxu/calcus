@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="module">
+	import { C, Sym, Sin, Mul, Cos, Pow } from "./Calcus.js";
+
+	let x = new Sym("x");
+
+	let f3 = new Sin(new Mul(new C(3), x));
+
+	console.log("(x^x)'")
+	let f4 = new Pow(x, x);
+	console.log(f4.deriv("x"));
+
+	let d = f3.deriv("x");
+
+	console.log(d, d.tex());
+	let e = d.deriv("x");
+
+	console.log(e, e.tex());
+	let f = e.deriv("x");
+
+	console.log(f, f.tex());
+	let g = f.deriv("x");
+
+	console.log(g, g.tex());
+
+	// console.log(f3.calcu({ x: 1, y: 2 }));
+</script>
+
+</html>
